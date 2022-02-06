@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import linear_kernel
 myzip=ZipFile('episodes-sample.zip')
 f=myzip.open('episodes-sample.csv')
 data=pd.read_csv(f)
-data.head()
+
 df_use=data.iloc[:10000,:]
 
 

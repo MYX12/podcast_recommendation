@@ -2,11 +2,14 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from zipfile import ZipFile
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-
-data=pd.read_csv("episodes-sample.csv",thousands=',')
+myzip=ZipFile('episodes-sample.zip')
+f=myzip.open('episodes-sample.csv')
+data=pd.read_csv(f)
+data.head()
 df_use=data.iloc[:10000,:]
 
 
